@@ -1,0 +1,17 @@
+
+<% @users.each do |u| %>
+  <strong><%= h u.login %></strong>
+  <p>Email: <%= h u.email %></p>
+  <p>Access Keys: </p>
+  <ul>
+    <% u.access_keys.each do |k| %>
+      <li><%= h k.key %></li>
+    <% end %>
+  </ul>
+  <p>Sites: </p>
+  <ul>
+    <% u.sites.each do |s| %>
+      <li><%= h s.address %></li>
+    <% end %>
+  </ul>
+<% end %>

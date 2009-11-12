@@ -1,0 +1,34 @@
+<h1>My Permissions List</h1>
+
+<p>
+  This is a list of sites that you have authorized to use your access keys. 
+  If you try using your access key on a different site/domain, the images may 
+  not display reliably. If you will be developing your website on your local 
+  machine, it is highly recommended that you add "http://localhost/" to this 
+  list.
+</p>
+
+<p>
+  <em>Importont Note:</em> To use Dynamic Images with subdomains you can 
+  prefix your domain with "*." (without the quotes). For example if you want 
+  to use images on both www.mydomain.ca and users.mydomain.ca you could simply 
+  add http://*.mydomain.ca/ to your permissions list.
+</p>
+
+<table id="user-sites">
+  <tr>
+    <th>Address</th>
+  </tr>
+
+<% for site in @sites %>
+  <tr>
+    <td><%=h site.address %></td>
+    <td><%= link_to 'Edit', edit_user_site_path(:id => site, :user_id => current_user.id) %></td>
+    <td><%= link_to 'Remove', user_site_path(:id => site, :user_id => current_user.id), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add a site to your permissions list', new_user_site_path(:user_id => current_user.id) %>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Dynamic Images</title>
+    <%= stylesheet_link_tag 'reset' %>
+    <%= stylesheet_link_tag 'app' %>
+  </head>
+  <body>
+  
+  <div id="header">
+    
+    <div id="session-info">
+      <% if logged_in? %>
+        <%= h "You are logged in as: #{current_user.login} - " %>
+        <%= link_to 'Log out', session_path, :method => :delete %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_path %> |
+        <%= link_to 'Log in', new_session_path %>
+      <% end %>
+    </div>
+    
+    <div id="logo">
+      <h1><%= link_to "Dynamic Images", root_path %></h1>
+      <em>by Thoughtless Corp</em>
+    </div>
+    
+  </div>
+  
+  
+  <div id="sub-header-bar">
+    
+  </div>
+  
+  <div id="main">
+  
+    <div id="navigation"><div class="bkgndimg"><div class="bkgndimg"><div class="spacing">
+      <p><%= link_to 'Home', root_path %></p>
+      <p><%= link_to 'How it works', :controller => 'pages', :action => 'instructions' %></p>
+      <p><%= link_to 'Get an Access Key', :controller => 'pages', :action => 'get_an_access_key' %></p>
+      <p><%= link_to 'Cheatsheet (API)', :controller => 'pages', :action => 'api' %></p>
+      <p><%= link_to 'Wiki (Beta)', 'http://dynamicimages.heroku.com/articles' %></p>
+      <p><%= link_to 'Contact', :controller => 'pages', :action => 'contact' %></p>
+      <% if logged_in? %>
+        <p><%= link_to 'Edit my account', edit_user_path(current_user) %></p>
+        <p><%= link_to 'My Access Keys', access_keys_path %></p>
+        <p><%= link_to 'My Permissions List', user_sites_path(:user_id => current_user.id) %></p>
+        
+        <% if current_user.roles.include?(Role.find_by_name("global_admin")) %>
+          <p><%= link_to 'List Users', users_path %></p>
+          <p><%= link_to 'Add User', new_user_path %></p>
+        <% end %>
+        
+      <% end %>
+    </div></div></div></div>
+  
+    <% if flash[:notice] %>
+      <div id="flash-notice" class="flash">
+        <%= h flash[:notice] %>
+      </div>
+    <% end %>
+    
+    <div id="content">
+      <%= yield %>
+    </div>
+    
+    <div id="footer">
+      <p>&copy; 2008 Thoughtless Corp.</p>
+      <p>This is beta software.</p>
+    </div>
+  </div>
+  
+  
+  <!-- Start Google Analytics -->
+  <% if RAILS_ENV == 'production' %>
+  
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3769892-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+  
+  <% end %>
+  <!-- End Google Analytics -->
+  
+  
+  </body>
+</html>

@@ -1,0 +1,195 @@
+
+body {
+  text-align: justify;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Trebuchet MS", "DejaVu Sans", verdana, arial, "Sans Serif";
+  letter-spacing: 0.1em;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 120%;
+}
+
+em {
+  font-style: italic;
+}
+
+.strong-em {
+  font-style: italic;
+  font-weight: 900;
+}
+strong {
+  font-weight: 900;
+}
+em {
+  font-style: italic;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-left: 2em;
+  line-height: 1.4em;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+a:link {
+  color: #000000;
+}
+a:visited {
+  color: #222222;
+}
+a:hover {
+  background-color: #88aaff;
+}
+
+div#main, div#header {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+#header {
+  margin: 1em 0 1em 0;
+}
+
+#logo {
+  font-family: "Trebuchet MS", "DejaVu Sans", verdana, arial, "Sans Serif";
+  letter-spacing: 0.1em;
+}
+
+#header h1 {
+  margin-bottom: 0;
+  color: #2244ee;
+}
+
+#header h1 a {
+  text-decoration: none;
+  color: #2244ee;
+  
+}
+#header h1 a:link {
+  text-decoration: none;
+  color: #2244ee;
+}
+#header h1 a:visited {
+  text-decoration: none;
+  color: #2244ee;
+}
+
+#sub-header-bar {
+  background-image: url('http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/gradient/direction/top/from/2244ee/to/001579/size/60');
+  background-repeat: repeat-x;
+  background-position: top;
+  background-color: #eaeaea;
+  height: 65px;
+  color: white;
+}
+
+
+
+#navigation {
+  float: right;
+  background-color: #6688ee;
+  border: 2px #113388 solid;
+  margin-left: 0.6em;
+  width: 13em;
+}
+
+#navigation div.spacing {
+  padding: 1em;
+}
+
+#navigation div.bkgndimg {
+  background-image: url('http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/gradient/direction/top/from/ccaaff/to/6688ee/size/75');
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+#navigation div.bkgndimg div.bkgndimg {
+  background-image: url('http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/gradient/direction/bottom/from/ccaaff/to/6688ee/size/75');
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+
+#session-info {
+  float: right;
+}
+
+.flash, .active-record-validation-errors {
+ padding: 1em;
+ font-size: 120%;
+ margin-right: 13em;
+}
+
+.flash {
+  border: 2px #44cc66 solid;
+  background: #88ff99;
+}
+
+.active-record-validation-errors {
+  border: 0.2em #db3440 solid;
+  background: #fa7777;
+}
+
+#footer {
+  clear: both;
+  margin-top: 4em;
+  border-top: 1px #777777 solid;
+  text-align: center;
+  font-size: 70%;
+}
+
+
+.inset {
+  border: 1px black solid;
+  padding: 1em;
+  width: 20em;
+}
+
+
+span.example {
+  display: block;
+  margin-top: 1em;
+}
+span.example img {
+  display: block;
+}
+
+.form-field {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#user-sites td, #user-sites th {
+  padding: 0.2em;
+}
+#user-sites th {
+  font-weight: bold;
+}
+
+div.address p {
+  margin: 0 0 0 2em;
+}
+

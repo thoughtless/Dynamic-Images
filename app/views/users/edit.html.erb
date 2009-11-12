@@ -1,0 +1,17 @@
+<%= error_messages_for :user %>
+<% form_for :user, :url => user_path(@user), :html => {:method => :put}  do |f| -%>
+
+<div class="inset">
+<p>Only fill these out if you want to change your password.</p>
+<p><label for="user_password">Change Password</label><br/>
+<%= f.password_field :password %></p>
+
+<p><label for="user_password_confirmation">Confirm New Password</label><br/>
+<%= f.password_field :password_confirmation %></p>
+</div>
+
+<p><label for="user_email">Email</label><br/>
+<%= f.text_field :email %></p>
+
+<p><%= submit_tag 'Make Changes!' %></p>
+<% end -%>

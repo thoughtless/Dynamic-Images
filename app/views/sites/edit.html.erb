@@ -1,0 +1,17 @@
+<h1>Edit Site</h1>
+
+<%= error_messages_with_div_for_site %>
+
+<% form_for(@site, :url => user_site_path(:id => @site, :user_id => current_user.id)) do |f| %>
+  <div class="form-field">
+    <b>Address</b><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="form-field">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', user_site_path(:id => @site, :user_id => current_user.id) %> |
+<%= link_to 'Back', user_sites_path(:user_id => current_user.id) %>

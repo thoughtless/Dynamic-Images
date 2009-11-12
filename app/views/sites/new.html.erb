@@ -1,0 +1,16 @@
+<h1>Add a site to your permissions list</h1>
+
+<%= error_messages_with_div_for_site %>
+
+<% form_for(@site, :url => user_sites_path(:user_id => current_user.id)) do |f| %>
+  <div class="form-field">
+    <b>Address</b><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="form-field">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', user_sites_path(:user_id => current_user.id) %>

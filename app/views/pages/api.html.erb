@@ -1,0 +1,61 @@
+<h2>API</h2>
+<p>
+  Since Dynamic Images is in a beta phase, the options are somewhat limited. 
+  However, we have started with the most common images that web developers use.
+</p>
+
+<p>
+  <strong>Type: </strong>Currently there are only two available types: 
+  <code>gradient</code> and <code>corner</code>. Type must be the first 
+  parameter after your Access Key.
+</p>
+
+<p>
+  <strong>direction: </strong>Options: <code>top-left, top, top-right, right, 
+  bottom-right, bottom, bottom-left, left</code>. Note: the <code>corner</code> 
+  type (perhaps obviously) does not support top, bottom, left, or right.
+</p>
+
+<p>
+  <strong>from: </strong>Either a word that is a color or a standard RGB hex 
+  color code. Note, if you use the RGB hex color code, you must exclude the # 
+  symbol. Example: <code>red, 444235, f2f3f5, white</code>.
+</p>
+
+<p>
+  <strong>to: </strong>Same as from.
+</p>
+
+<p>
+  <strong>size: </strong>This is the primary size of the gradient. If the 
+  direction is left/right, this is the width. If the direction is top/bottom, 
+  this is the height. If the direction is one of the corners, then this is the 
+  width. <em>Note: the maximum size for any image is 100 pixels. If either size 
+  or size_alt is greater than 100, the resulting image will be scaled. The ratio 
+  between size and size_alt will be maintained. It is not recommended to rely 
+  on this scaling, however, because the 100 pixel limitation may be removed in 
+  the future.</em>
+</p>
+
+<p>
+  <strong>size_alt: </strong>This is whichever dimension "size" parameter isn't. 
+  If this is omitted, then its default depends on the direction. For 
+  top/bottom/left/right, it is 5. For all others it is equal to size 
+  (and the image will be a square). 
+</p>
+
+<p>
+  <strong>curve: </strong>This is the 'curviness' of the corner. It is ignored 
+  if the type is <code>gradient</code>. Zero gives a straigt line. Numbers above 
+  two are generally not recommended. Negaive numbers and decimals are permitted.
+</p>
+
+<h3>Examples</h3>
+
+<%= example "http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/", "corner/direction/top-left/curve/-.6/from/3355ee/to/44eeaa/size/50/size_alt/50" %>
+<%= example "http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/", "corner/direction/top-right/curve/-.6/from/3355ee/to/44eeaa/size/50" %>
+<%= example "http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/", "corner/direction/top-right/curve/1.4/from/3355ee/to/44eeaa/size/50" %>
+<%= example "http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/", "gradient/direction/top-right/from/3355ee/to/44eeaa/size/50" %>
+<%= example "http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/", "gradient/direction/top/from/3355ee/to/44eeaa/size/50" %>
+<%= example "http://www.thoughtless.ca/dyn_img/9910c180-8ae9-4d88-b551-309c2309c8ed/", "gradient/direction/top/from/3355ee/to/44eeaa/size/50/size_alt/30" %>
+
